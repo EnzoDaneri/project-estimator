@@ -1,8 +1,9 @@
 <script>
+import materialStore from './material-store.js';
 
 export let id;
 export let name= '';
-export let price;
+export let price = 5;
 
 
 $: mode = id ? 'edit' : 'add'; 
@@ -12,6 +13,11 @@ const submit = () => {
     if(!canSubmit) {
         return;
     }
+
+ if(mode === 'add') {
+     materialStore.add(name, price);
+ }
+
    price = '';
    name= '';
    id= undefined;
