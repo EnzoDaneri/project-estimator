@@ -6,7 +6,7 @@ const key = 'materials';
 
 if(localStorage.getItem(key)) {
     materialStore.set(JSON.parse(localStorage.getItem(key)));
-}//para que traiga de local storage
+}//para que traiga de local storage lo que haya guardado
 
 
 const add =  (name, price) => {
@@ -21,7 +21,6 @@ const add =  (name, price) => {
     });
 } 
 materialStore.subscribe((items) => {
-    console.log(items);
     const jsonString = JSON.stringify(items);
     localStorage.setItem(key, jsonString);
     
