@@ -18,7 +18,11 @@ const submit = () => {
      materialStore.add(name, price);
  }
 
-   price = '';
+ if(mode === 'edit') {
+     materialStore.edit(id, name, price);
+ }
+
+   price = '5';
    name= '';
    id= undefined;
 }
