@@ -29,7 +29,14 @@ const edit = (id, name, price ) => {
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD'
-})
+});
+
+
+const remove = (id) => {
+  materialStore.remove(id);
+   
+}
+
 
 </script>
 
@@ -48,7 +55,7 @@ const formatter = new Intl.NumberFormat('en-US', {
   <tr on:click={edit(material.id, material.name, material.price)}>
     <td>{material.name}</td>
     <td>{formatter.format( material.price)}</td>
-    <td><i class="far fa-trash-alt"></i> </td>
+    <td><i on:click|stopPropagation={remove(material.id)} class="far fa-trash-alt"></i> </td>
   </tr>
  {/each}
   <tr>
@@ -66,6 +73,9 @@ table {
 
 tr {
     cursor: pointer;
+}
+tr:last-of-type {
+    cursor: inherit;
 }
 
 </style>
