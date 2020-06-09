@@ -981,6 +981,8 @@ var app = (function () {
     	let updating_id;
     	let updating_name;
     	let t2;
+    	let t3;
+    	let a;
     	let current;
 
     	function form_price_binding(value) {
@@ -1025,7 +1027,12 @@ var app = (function () {
     			create_component(form.$$.fragment);
     			t2 = space();
     			create_component(table.$$.fragment);
-    			attr(main, "class", "svelte-pqkp93");
+    			t3 = space();
+    			a = element("a");
+    			a.textContent = "Cŕeditos";
+    			attr(main, "class", "svelte-1kw8956");
+    			attr(a, "class", "creditos svelte-1kw8956");
+    			attr(a, "href", "https://www.youtube.com/watch?v=ujbE0mzX-CU&t=25238s");
     		},
     		m(target, anchor) {
     			insert(target, main, anchor);
@@ -1034,6 +1041,8 @@ var app = (function () {
     			mount_component(form, main, null);
     			append(main, t2);
     			mount_component(table, main, null);
+    			insert(target, t3, anchor);
+    			insert(target, a, anchor);
     			current = true;
     		},
     		p(ctx, [dirty]) {
@@ -1074,6 +1083,8 @@ var app = (function () {
     			if (detaching) detach(main);
     			destroy_component(form);
     			destroy_component(table);
+    			if (detaching) detach(t3);
+    			if (detaching) detach(a);
     		}
     	};
     }
