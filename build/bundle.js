@@ -1029,7 +1029,7 @@ var app = (function () {
     			create_component(table.$$.fragment);
     			t3 = space();
     			a = element("a");
-    			a.textContent = "Cŕeditos";
+    			a.textContent = "Credits";
     			attr(main, "class", "svelte-1kw8956");
     			attr(a, "class", "creditos svelte-1kw8956");
     			attr(a, "href", "https://www.youtube.com/watch?v=ujbE0mzX-CU&t=25238s");
